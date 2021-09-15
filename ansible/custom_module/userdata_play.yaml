@@ -1,0 +1,5 @@
+---
+- name: Custom module Testing
+  hosts: localhost
+  tasks:
+  - userdata: machine_id=i-838265892

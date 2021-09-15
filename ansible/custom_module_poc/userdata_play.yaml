@@ -1,0 +1,27 @@
+---
+- name: Custom module Testing
+  hosts: localhost
+  vars_prompt:
+  - name: machine_id
+    prompt: "Please provide machine id "
+    private: no
+
+  tasks:
+  - userdata: machine_id="{{machine_id}}" # i-04d05d869495dc0ce
+    register: result
+  - debug:
+      msg: "{{result}}"
+
+    #- name: final block
+    #  block:
+    #always:
+    #    - debug:
+    #      msg: "{{result.stdout}}"
+    # async: 50
+    #poll: 0
+
+    # - name: curl status
+    # shell: curl http://127.0.0.1/5000/machine_status?machine_id=i-09b8dc682708bdeae
+    #register: result
+    #- debug: var=result
+

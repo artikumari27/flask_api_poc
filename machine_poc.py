@@ -43,5 +43,5 @@ def machine_status():
     instance_status= describe_instance['Reservations'][0]['Instances'][0]['State']['Name']
     print(instance_status)
     return instance_status
-app.run()
+app.run(host="localhost", port=5000, debug=True)
 
